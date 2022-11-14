@@ -1,6 +1,6 @@
 // First Assignment
 
-const fizzBuzzAssignment = (number)=> {
+const fizzBuzz = (number)=> {
   let resultArr=[];
 
   for(let i=1;i<=number;i++){
@@ -24,7 +24,7 @@ const fizzBuzzAssignment = (number)=> {
   console.log(resultArr);
 }
 
-fizzBuzzAssignment(60);
+fizzBuzz(60);
 
 
 
