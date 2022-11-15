@@ -4,10 +4,10 @@ export default function RegistrationForm() {
   return (
     <div>
        <section className="h-100 bg-dark">
-        <div className="container py-5 h-100">
+        <div className="container py-2 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col">
-              <div className="card card-registration my-4">
+              <div className="card card-registration">
                 <div className="row g-0">
                   <div className="col-xl-6 d-none d-xl-block">
                     <img src="https://wallpaper.dog/large/20492984.jpg"  alt = "ntg" className="img-fluid" style={{borderTopLeftRadius: '.25rem', borderBottomLeftRadius: '.25rem'}} />
