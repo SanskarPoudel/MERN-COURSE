@@ -19,7 +19,7 @@ export default function Lists({listArray,key}) {
 
 
 
-//PRACTICE FAILED
+// FAILED ATTEMPT
 
 // const handleCross = ()=>{
 //   setListClass((prevListClass)=>{
