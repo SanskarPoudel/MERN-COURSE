@@ -1,5 +1,5 @@
 import React from 'react'
-import"./Todolist.css"
+import"../Todolist.css"
 export default function Footer({clearLists,listLength}) {
 
     const handleClear = ()=>{

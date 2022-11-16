@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Add from './Add'
-import Footer from './Footer'
-import Header from './Header'
-import Lists from './Lists'
+import Add from './todoComponents/Add'
+import Footer from './todoComponents/Footer'
+import Header from './todoComponents/Header'
+import Lists from './todoComponents/Lists'
 import "./Todolist.css"
 export default function Todolist() {
     const[list,setList] = useState([]);
