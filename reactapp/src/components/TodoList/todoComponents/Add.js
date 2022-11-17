@@ -15,7 +15,10 @@ export default function Add({addLists}) {
             console.log("Please Enter your things to do")
         }
         else{
-            addLists(todo);
+            addLists({
+              title:todo,
+              striked: false
+            });
         setTodo('');
         }
        

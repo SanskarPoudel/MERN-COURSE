@@ -1,12 +1,16 @@
-export default function Lists({listArray,key}) {
-  
+export default function Lists({listArray,key,crossOnclick}) {
+
+    const crossTodo = (index) =>{
+      crossOnclick(index);
+    }
+
   return (
     <div>
             <ul className="list-group">
-        {listArray.map((element,key)=>{
+            {listArray.map((element,index)=>{
             return(
-                 <li className="list-group-item" key={key} >
-                 {element}
+                 <li className={element.striked===false ? "list-group-item":"list-group-item text-decoration-line-through"}key={index} onClick={(event)=>crossTodo(index)} >
+                 {element.title}
                  </li>
                  )
         })}
@@ -15,32 +19,3 @@ export default function Lists({listArray,key}) {
     </div>
   )
 }
-
-
-
-
-// FAILED ATTEMPT
-
-// const handleCross = ()=>{
-//   setListClass((prevListClass)=>{
-
-//     return("list-group-item text-decoration-line-through");
-
-//   })
-// }
-// return (
-//   <div>
-//           <ul className="list-group">
-//       {listArray.map((element,key)=>{
-//           return(
-//                <li className={listClass} key={key} onClick={handleCross}>
-//                {element}
-//                </li>
-//                )
-//       })}
-      
-//     </ul>
-//   </div>
-// )
-// }
-
