@@ -1,6 +1,7 @@
 
 import './App.css';
 import Counter from './components/counter/Counter';
+import Login from './components/login/Login';
 import RegistrationForm from './components/registrationForm/RegistrationForm';
 import Todolist from './components/TodoList/Todolist';
 function App() {
@@ -10,6 +11,7 @@ function App() {
        <Counter/>
        <RegistrationForm/>
        <Todolist/>
+       <Login/>
     </>
    );
 }
