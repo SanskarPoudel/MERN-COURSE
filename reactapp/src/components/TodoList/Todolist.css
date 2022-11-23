@@ -1,25 +1,23 @@
-.todo-root{
-    background-color: rgb(33,37,41);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.todo-root {
+  background-color: rgb(33, 37, 41);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
-.card-todo{
-    
-    width: 30rem;
-    padding: 2rem;
-    padding-top:1rem;
-    
+.card-todo {
+  width: 50rem;
+  padding: 2rem;
+  padding-top: 1rem;
 }
 
-.pending-text{
-    font-size: 1.3rem;
-    font-weight: 500;
+.pending-text {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-.danger{
-    height: fit-content !important;
+.danger {
+  height: fit-content !important;
 }
 
-
-
-
+.listTopic:hover {
+  cursor: pointer;
+}

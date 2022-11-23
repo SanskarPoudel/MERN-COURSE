@@ -1,15 +1,24 @@
-import React from 'react'
-import"../Todolist.css"
-export default function Footer({clearLists,listLength}) {
+import React, { useContext } from "react";
+import "../Todolist.css";
+import { todoContext } from "../Todolist";
+export default function Footer() {
+  const { clearLists, listLength } = useContext(todoContext);
 
-    const handleClear = ()=>{
-       clearLists();
-    }
+  const handleClear = () => {
+    clearLists();
+  };
   return (
-    <div className='d-flex justify-content-between '>
-      <p className='pending-text mt-3'>You have {listLength} task{listLength===1?"":"s"} in the Todo List</p>
-      <button type="button" className=" danger btn btn-danger mt-3" onClick={handleClear}>Clear All</button>
-
+    <div className="d-flex justify-content-between ">
+      <p className="pending-text mt-3">
+        You have {listLength} task{listLength === 1 ? "" : "s"} in the Todo List
+      </p>
+      <button
+        type="button"
+        className=" danger btn btn-danger mt-3"
+        onClick={handleClear}
+      >
+        Clear All
+      </button>
     </div>
-  )
+  );
 }
