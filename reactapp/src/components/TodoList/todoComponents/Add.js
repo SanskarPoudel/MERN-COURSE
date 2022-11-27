@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { todoContext } from "../Todolist";
+
 export default function Add() {
   const { addlists } = useContext(todoContext);
 
@@ -13,15 +14,8 @@ export default function Add() {
   };
 
   const addTodo = () => {
-    if (todo === "") {
-      console.log("Please Enter your things to do");
-    } else {
-      addlists({
-        title: todo,
-        completed: false,
-      });
-      setTodo("");
-    }
+    addlists(todo);
+    setTodo("");
   };
 
   return (

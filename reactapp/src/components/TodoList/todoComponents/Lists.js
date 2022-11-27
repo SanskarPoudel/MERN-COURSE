@@ -2,7 +2,10 @@ import "../Todolist.css";
 import { todoContext } from "../Todolist";
 import { useContext } from "react";
 export default function Lists() {
-  const { changeTodoStrike, list, deleteTodo } = useContext(todoContext);
+  const { changeTodoStrike, state, deleteTodo, trackEdit, updateTodo } =
+    useContext(todoContext);
+
+  console.log(state);
 
   const crossTodo = (index) => {
     changeTodoStrike(index);
@@ -12,10 +15,15 @@ export default function Lists() {
     deleteTodo(index);
   };
 
+  const editList = (index) => {
+    trackEdit(index);
+    updateTodo(index);
+  };
+
   return (
     <div>
       <ul className="list-group">
-        {list.map((element, index) => {
+        {state.map((element, index) => {
           return (
             <li
               className={
@@ -33,6 +41,13 @@ export default function Lists() {
                 {element.title}{" "}
               </div>{" "}
               <div className="btns ">
+                <button
+                  className="btn btn-warning mx-2"
+                  onClick={(event) => editList(index)}
+                >
+                  {" "}
+                  Edit{" "}
+                </button>
                 <button
                   className=" btn btn-warning"
                   key={index}

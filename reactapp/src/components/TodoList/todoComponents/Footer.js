@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import "../Todolist.css";
 import { todoContext } from "../Todolist";
 export default function Footer() {
-  const { clearLists, listLength } = useContext(todoContext);
+  const { clear, listLength } = useContext(todoContext);
 
   const handleClear = () => {
-    clearLists();
+    clear();
   };
   return (
-    <div className="d-flex justify-content-between ">
+    <div className="d-flex justify-content-between">
       <p className="pending-text mt-3">
         You have {listLength} task{listLength === 1 ? "" : "s"} in the Todo List
       </p>
