@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Navbar() {
+  const { isLoggedIn, error, logOut } = useContext(AuthContext);
   return (
     <div>
       <nav className=" container navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
+        <Link className="nav-link" to="/">
           MERN COURSE
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,27 +23,39 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="todo">
-                Todo App
-              </a>
-            </li>
-            <li className="nav-item active">
-              <a className="nav-link" href="register">
-                Registration Form
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="login">
-                Login Form
-              </a>
-            </li>
+            {!isLoggedIn && (
+              <>
+                <li className="nav-item active">
+                  <Link className="nav-link" to="register">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="login">
+                    Login Form
+                  </Link>
+                </li>
+              </>
+            )}
+            {}
 
-            <li className="nav-item">
-              <a className="nav-link" href="counter">
-                Counter
-              </a>
-            </li>
+            {isLoggedIn && (
+              <>
+                <li className="nav-item active">
+                  <Link className="nav-link" to="todo">
+                    Todo App
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="counter">
+                    Counter
+                  </Link>
+                </li>
+                <button className="btn btn-warning" onClick={logOut}>
+                  Log Out
+                </button>
+              </>
+            )}
             <li className="nav-item"></li>
           </ul>
         </div>
