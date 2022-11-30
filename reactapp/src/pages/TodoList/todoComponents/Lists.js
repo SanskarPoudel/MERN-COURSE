@@ -1,29 +1,23 @@
-import "../Todolist.css";
-import { todoContext } from "../Todolist";
-import { useContext } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { completedTodo, deleteTodo } from "../TodoSlice";
 export default function Lists() {
-  const { changeTodoStrike, state, deleteTodo, trackEdit, updateTodo } =
-    useContext(todoContext);
+  const dispatch = useDispatch();
 
-  console.log(state);
+  const todos = useSelector((state) => state.todo);
 
   const crossTodo = (index) => {
-    changeTodoStrike(index);
+    dispatch(completedTodo(index));
   };
 
   const delTodo = (index) => {
-    deleteTodo(index);
-  };
-
-  const editList = (index) => {
-    trackEdit(index);
-    updateTodo(index);
+    dispatch(deleteTodo(index));
   };
 
   return (
     <div>
       <ul className="list-group">
-        {state.map((element, index) => {
+        {todos.map((element, index) => {
           return (
             <li
               className={
@@ -41,13 +35,6 @@ export default function Lists() {
                 {element.title}{" "}
               </div>{" "}
               <div className="btns ">
-                <button
-                  className="btn btn-warning mx-2"
-                  onClick={(event) => editList(index)}
-                >
-                  {" "}
-                  Edit{" "}
-                </button>
                 <button
                   className=" btn btn-warning"
                   key={index}

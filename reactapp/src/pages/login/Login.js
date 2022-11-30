@@ -34,7 +34,7 @@ export default function Login() {
       </div>
       <div className="form-group py-2">
         {error && (
-          <div class="alert alert-warning" role="alert">
+          <div className="alert alert-warning" role="alert">
             Invalid Username / Password. Re-Enter or Click
             <Link to="/register"> here </Link>to register.
           </div>

@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import { todoContext } from "../Todolist";
-
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addLists } from "../TodoSlice";
 export default function Add() {
-  const { addlists } = useContext(todoContext);
+  const dispatch = useDispatch();
 
   const [todo, setTodo] = useState("");
 
@@ -14,7 +14,7 @@ export default function Add() {
   };
 
   const addTodo = () => {
-    addlists(todo);
+    dispatch(addLists({ title: todo, completed: false }));
     setTodo("");
   };
 
