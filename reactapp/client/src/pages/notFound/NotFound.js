@@ -5,7 +5,7 @@ export default function NotFound() {
     <div>
       <div className="d-flex align-items-center justify-content-center vh-100 bg-primary">
         <h1 className="display-1 fw-bold text-white">
-          ERROR 404 ! PAGE NOT FOUNDS
+          ERROR 404 ! PAGE NOT FOUND
         </h1>
       </div>
     </div>
