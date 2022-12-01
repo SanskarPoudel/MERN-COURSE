@@ -1,12 +1,11 @@
-const loginModel = require("../model/loginModel");
+const userModel = require("../model/userModel");
 
 const loginController = {
   checkCredemtials: (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+    const { username, password } = req.body;
 
-    return username === loginModel.getUser().username &&
-      password === loginModel.getUser().password
+    return username === userModel.getUser().username &&
+      password === userModel.getUser().password
       ? res.status(200).send("Successfully logged in")
       : res.status(404).send("User not found");
   },
